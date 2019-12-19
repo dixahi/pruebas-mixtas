@@ -1,89 +1,85 @@
-const loadPlaces = function (coords) {
-    // COMMENT FOLLOWING LINE IF YOU WANT TO USE STATIC DATA AND ADD COORDINATES IN THE FOLLOWING 'PLACES' ARRAY
-    const method = 'api';
+window.onload = () => {
+    const button = document.querySelector('button[data-action="change"]');
+    button.innerText = '﹖';
 
-    const PLACES = [
+    let places = staticLoadPlaces();
+    renderPlaces(places);
+};
+
+function staticLoadPlaces() {
+    return [
         {
-            name: "Your place name",
+            name: 'Pokèmon',
             location: {
-                lat: 41.505584, // add here latitude if using static data
-                lng: 1.832204, // add here longitude if using static data
-            }
+                // lat: <your-latitude>,
+                // lng: <your-longitude>,
+            },
         },
     ];
+}
 
-    if (method === 'api') {
-        return loadPlaceFromAPIs(coords);
+var models = [
+    {
+        url: './assets/magnemite/scene.gltf',
+        scale: '0.5 0.5 0.5',
+        info: 'Magnemite, Lv. 5, HP 10/10',
+        rotation: '0 180 0',
+    },
+    {
+        url: './assets/articuno/scene.gltf',
+        scale: '0.2 0.2 0.2',
+        rotation: '0 180 0',
+        info: 'Articuno, Lv. 80, HP 100/100',
+    },
+    {
+        url: './assets/dragonite/scene.gltf',
+        scale: '0.08 0.08 0.08',
+        rotation: '0 180 0',
+        info: 'Dragonite, Lv. 99, HP 150/150',
+    },
+];
+
+var modelIndex = 0;
+var setModel = function (model, entity) {
+    if (model.scale) {
+        entity.setAttribute('scale', model.scale);
     }
 
-    return PLACES;
-};
-// getting places from REST APIs
-function loadPlaceFromAPIs(position) {
-    const params = {
-        radius: 300,    // search places not farther than this value (in meters)
-        clientId: 'VNGD14IZJTZZ25B01BOX3W0AOKOGXDDF3WNWVH544PXUPN30',
-        clientSecret: 'MCHIH4VDNOPPM203KGFXUZLAISYGZFBDSLYMAQUDWYOYKFOU',
-        version: '20300101',    // foursquare versioning, required but unuseful for this demo
-    };
+    if (model.rotation) {
+        entity.setAttribute('rotation', model.rotation);
+    }
 
-    // CORS Proxy to avoid CORS problems
-    const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+    if (model.position) {
+        entity.setAttribute('position', model.position);
+    }
 
-    // Foursquare API
-    const endpoint = `${corsProxy}https://api.foursquare.com/v2/venues/search?intent=checkin
-        &ll=${position.latitude},${position.longitude}
-        &radius=${params.radius}
-        &client_id=${params.clientId}
-        &client_secret=${params.clientSecret}
-        &limit=15
-        &v=${params.version}`;
-    return fetch(endpoint)
-        .then((res) => {
-            return res.json()
-                .then((resp) => {
-                    return resp.response.venues;
-                })
-        })
-        .catch((err) => {
-            console.error('Error with places API', err);
-        })
+    entity.setAttribute('gltf-model', model.url);
+
+    const div = document.querySelector('.instructions');
+    div.innerText = model.info;
 };
 
+function renderPlaces(places) {
+    let scene = document.querySelector('a-scene');
 
-window.onload = () => {
-    const scene = document.querySelector('a-scene');
+    places.forEach((place) => {
+        let latitude = place.location.lat;
+        let longitude = place.location.lng;
 
-    // first get current user location
-    return navigator.geolocation.getCurrentPosition(function (position) {
+        let model = document.createElement('a-entity');
+        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        // than use it to load from remote APIs some places nearby
-        loadPlaces(position.coords)
-            .then((places) => {
-                places.forEach((place) => {
-                    const latitude = place.location.lat;
-                    const longitude = place.location.lng;
+        setModel(models[modelIndex], model);
 
-                    // add place name
-                    const text = document.createElement('a-link');
-                    text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                    text.setAttribute('title', place.name);
-                    text.setAttribute('href', 'http://www.example.com/');
-                    text.setAttribute('scale', '13 13 13');
+        model.setAttribute('animation-mixer', '');
 
-                    text.addEventListener('loaded', () => {
-                        window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
-                    });
+        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+            var entity = document.querySelector('[gps-entity-place]');
+            modelIndex++;
+            var newIndex = modelIndex % models.length;
+            setModel(models[newIndex], entity);
+        });
 
-                    scene.appendChild(text);
-                });
-            })
-    },
-        (err) => console.error('Error in retrieving position', err),
-        {
-            enableHighAccuracy: true,
-            maximumAge: 0,
-            timeout: 27000,
-        }
-    );
-};
+        scene.appendChild(model);
+    });
+}
