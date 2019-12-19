@@ -10,19 +10,27 @@
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
-//hoja de estilo
-     <link rel=stylesheet type="text/css" href="estilo.css">
-//archivo js
-<script src="./script.js"></script>
+    <link rel=stylesheet type="text/css" href="estilo.css">
+    <script src="./script.js"></script>
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
 	
-	<div style='position: absolute; top: 10px; width:100%; text-align: center; z-index: 1;'>
-	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - three.js mobile performance
-	<br/>
-	Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
-</div>
+<nav class="menu">
+   <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+   <label class="menu-open-button" for="menu-open">
+    <span class="lines line-1"></span>
+    <span class="lines line-2"></span>
+    <span class="lines line-3"></span>
+   </label>
+
+   <a href="#" class="menu-item blue"> <i class="fa fa-anchor"></i> </a>
+   <a href="#" class="menu-item green"> <i class="fa fa-coffee"></i> </a>
+   <a href="#" class="menu-item red"> <i class="fa fa-heart"></i> </a>
+   <a href="#" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
+   <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>
+   <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
+</nav>
 
     <a-scene
        vr-mode-ui="enabled: false"
