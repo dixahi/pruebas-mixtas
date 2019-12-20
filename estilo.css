@@ -1,4 +1,4 @@
-background_color = #392338
+
 menu_color = #fff
 hamburger_color = background_color
 icon_hover_color = #c1264e 
@@ -7,10 +7,7 @@ arrow_hover_color = #ff947f
 body
   padding 0
   margin 0
-  background-color background_color
-  color white
-  *
-    box-sizing border-box
+
 
 .icon
   position absolute
