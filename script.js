@@ -21,13 +21,13 @@ const loadPlaces = function (coords) {
 // acceso a lugares mediante API
 function loadPlaceFromAPIs(position) {
     const params = {
-        radius: 1000,    
+        radius: 150,    
         clientId: 'VNGD14IZJTZZ25B01BOX3W0AOKOGXDDF3WNWVH544PXUPN30',
         clientSecret: 'MCHIH4VDNOPPM203KGFXUZLAISYGZFBDSLYMAQUDWYOYKFOU',
-        version: '20300101',    // foursquare versioning, required but unuseful for this demo
+        version: '20300101',   
     };
 
-    // CORS Proxy to avoid CORS problems
+    // CORS Proxy 
     const corsProxy = 'https://cors-anywhere.herokuapp.com/';
 
     // Foursquare API
@@ -54,17 +54,15 @@ function loadPlaceFromAPIs(position) {
 window.onload = () => {
     const scene = document.querySelector('a-scene');
 
-    // first get current user location
+    //acceso a tu localización
     return navigator.geolocation.getCurrentPosition(function (position) {
 
-        // than use it to load from remote APIs some places nearby
         loadPlaces(position.coords)
             .then((places) => {
                 places.forEach((place) => {
                     const latitude = place.location.lat;
                     const longitude = place.location.lng;
-
-                    // add place name
+                    
                     const text = document.createElement('a-link');
                     text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     text.setAttribute('title', place.name);
