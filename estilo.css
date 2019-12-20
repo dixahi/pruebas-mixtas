@@ -92,7 +92,7 @@ a {
    position: absolute;
    top: 0;
    bottom: 0;
-   left: 0;
+   left: 1000;
    right: 0;
    width: 80px;
    height: 80px;
