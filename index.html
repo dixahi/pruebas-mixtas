@@ -15,37 +15,20 @@
 </head>
 
 <body>
-	
-	<div id="circularMenu" class="circular-menu">
 
-  <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
-    <i class="fa fa-plus"></i>
-  </a>
+<nav class="menu">
+   <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+   <label class="menu-open-button" for="menu-open">
+    <span class="lines line-1"></span>
+    <span class="lines line-2"></span>
+    <span class="lines line-3"></span>
+  </label>
 
-  <menu class="items-wrapper">
-    <a href="#" class="menu-item fa fa-facebook"></a>
-    <a href="#" class="menu-item fa fa-twitter"></a>
-    <a href="#" class="menu-item fa fa-google-plus"></a>
-    <a href="#" class="menu-item fa fa-linkedin"></a>
-  </menu>
-
-</div>
-
-
-<div id="circularMenu1" class="circular-menu circular-menu-left active">
-
-  <a class="floating-btn" onclick="document.getElementById('circularMenu1').classList.toggle('active');">
-    <i class="fa fa-bars"></i>
-  </a>
-
-  <menu class="items-wrapper">
-    <a href="#" class="menu-item fa fa-home"></a>
-    <a href="#" class="menu-item fa fa-user"></a>
-    <a href="#" class="menu-item fa fa-pie-chart"></a>
-    <a href="#" class="menu-item fa fa-cog"></a>
-  </menu>
-
-</div>
+   <a href="#" class="menu-item blue"> <i class="fa fa-anchor"></i> </a>
+   <a href="#" class="menu-item red"> <i class="fa fa-heart"></i> </a>
+   <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>
+   <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
+</nav>
 	
 	<a-scene
         cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
