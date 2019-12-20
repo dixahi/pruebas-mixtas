@@ -92,7 +92,7 @@ a {
    position: absolute;
    top: 0;
    bottom: 0;
-   left: 1000;
+   left: 0;
    right: 0;
    width: 80px;
    height: 80px;
@@ -324,7 +324,7 @@ a {
 
 button {
     display: flex;
-    align-items: center;
+    align-items: right;
     justify-content: center;
     border: 2px solid white;
     background-color: transparent;
