@@ -42,10 +42,13 @@ padding:60px;
  right:0;
 }
 .boton_busqueda{
-background-image: url("./recursos/lupa.png");
-	height:100px;
-  width:100px;
-  background-position:center;
+ padding: 9px;
+    font-weight: 10px;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #CC5807;
+    border-radius: 9px;
+    border: 1px solid #CC3A07;
 }
 
 .botones{
