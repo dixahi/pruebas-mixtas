@@ -369,5 +369,7 @@ img {
 }
 
 
-
+.hidden-div {
+  display: none;
+}
 
