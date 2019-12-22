@@ -15,10 +15,6 @@
 </head>
 
 <body>
-
-	
-	<a-scene
-		 
 <nav class="menu">
    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
    <label class="menu-open-button" for="menu-open">
@@ -27,11 +23,13 @@
     <span class="lines line-3"></span>
   </label>
 
-   <a href="#" class="menu-item blue"> <i class="fa fa-anchor"></i> </a>
-   <a href="http://google.es" class="menu-item red"> <i class="fa fa-heart"></i> </a>
-   <a href="#" class="menu-item orange"> <i class="fa fa-star"></i> </a>
-   <a href="#" class="menu-item lightblue"> <i class="fa fa-diamond"></i> </a>
+   <a href="#" class="menu-item blue"></a>
+   <a href="http://google.es" class="menu-item red"></a>
+   <a href="#" class="menu-item orange"></a>
+   <a href="#" class="menu-item lightblue"></a>
 </nav>
+	
+	<a-scene
         cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
         raycaster="objects: [gps-entity-place];"
         vr-mode-ui="enabled: false"
