@@ -32,16 +32,11 @@ img {
   margin:10px;
 
 }
+
 .busqueda{
-margin: auto;
  position: absolute;
- top: 0;
- bottom: 0;
- left: 0;
- right:1;
- width: 80px;
- height: 80px;
 }
+
 .botones{
   display: inline-block;
   justify-content: center;
