@@ -53,11 +53,6 @@ function loadPlaceFromAPIs(position) {
 
 window.onload = () => {
     const scene = document.querySelector('a-scene');
-
-    
-      const button = document.querySelector('button[data-action="change"]');
-    button.innerText = '﹖';
-
     
     //acceso a tu localización
     return navigator.geolocation.getCurrentPosition(function (position) {
