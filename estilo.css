@@ -2,7 +2,7 @@
 	
 @media screen and (max-width: 700px) {
  body {
-    padding: 170px 0 0 0;
+    padding: 400px 0 0 0;
     width: 100%
  }
 }
@@ -35,6 +35,11 @@ img {
 
 .busqueda{
  position: absolute;
+padding:60px;
+ top: 0;
+ bottom: 0;
+ left: 1;
+ right:0;
 }
 
 .botones{
