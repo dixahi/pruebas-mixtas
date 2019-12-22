@@ -43,6 +43,9 @@ padding:60px;
 }
 .boton_busqueda{
 background-image: url("./recursos/lupa.png");
+	height:100px;
+  width:100px;
+  background-position:center;
 }
 
 .botones{
