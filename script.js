@@ -85,3 +85,9 @@ window.onload = () => {
         }
     );
 };
+
+
+document.getElementById("applyEvent").addEventListener("click", function(){
+    document.getElementById('hidden-div').style.display = 'block';
+    this.style.display = 'none';
+});
