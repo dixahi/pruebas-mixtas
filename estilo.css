@@ -67,6 +67,7 @@ background-image: url("./recursos/lupa.png");
   }
 
 #wrapper {
+	position:absolute;
 	width: 400px;
 	margin: 0 auto;
 	background: #fff;
