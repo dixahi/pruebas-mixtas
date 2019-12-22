@@ -34,6 +34,7 @@ img {
 }
 
 .busqueda{
+	position:absolute;
 padding:60px;
  top: 0;
  bottom: 0;
