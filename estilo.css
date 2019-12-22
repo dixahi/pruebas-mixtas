@@ -32,7 +32,9 @@ img {
   margin:10px;
 
 }
-
+.busqueda{
+	position:absolute; top:0; left:0;
+}
 .botones{
   display: inline-block;
   justify-content: center;
