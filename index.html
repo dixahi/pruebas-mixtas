@@ -15,7 +15,18 @@
 </head>
 
 <body>
-<nav class="menu">
+
+	<a-scene
+        cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+        raycaster="objects: [gps-entity-place];"
+        vr-mode-ui="enabled: false"
+		embedded
+		arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+
+        <a-camera gps-camera="minDistance: 20;" rotation-reader>
+		</a-camera>
+		
+		<nav class="menu">
    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
    <label class="menu-open-button" for="menu-open">
     <span class="lines line-1"></span>
@@ -29,15 +40,6 @@
    <a href="#" class="menu-item lightblue"></a>
 </nav>
 	  
-	<a-scene
-        cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
-        raycaster="objects: [gps-entity-place];"
-        vr-mode-ui="enabled: false"
-		embedded
-		arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-
-        <a-camera gps-camera="minDistance: 20;" rotation-reader>
-		</a-camera>
 	</a-scene>
 
    
