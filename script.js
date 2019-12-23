@@ -5,8 +5,8 @@ const loadPlaces = function (coords) {
         {
             name: "Localización",
             location: {
-                lat: 0, 
-                lng: 0, 
+                lat: 0,
+                lng: 0,
             }
         },
     ];
@@ -21,13 +21,13 @@ const loadPlaces = function (coords) {
 // acceso a lugares mediante API
 function loadPlaceFromAPIs(position) {
     const params = {
-        radius: 150,    
+        radius: 150,
         clientId: 'VNGD14IZJTZZ25B01BOX3W0AOKOGXDDF3WNWVH544PXUPN30',
         clientSecret: 'MCHIH4VDNOPPM203KGFXUZLAISYGZFBDSLYMAQUDWYOYKFOU',
-        version: '20300101',   
+        version: '20300101',
     };
 
-    // CORS Proxy 
+    // CORS Proxy
     const corsProxy = 'https://cors-anywhere.herokuapp.com/';
 
     // Foursquare API
@@ -53,7 +53,7 @@ function loadPlaceFromAPIs(position) {
 
 window.onload = () => {
     const scene = document.querySelector('a-scene');
-    
+
     //acceso a tu localización
     return navigator.geolocation.getCurrentPosition(function (position) {
 
@@ -62,7 +62,7 @@ window.onload = () => {
                 places.forEach((place) => {
                     const latitude = place.location.lat;
                     const longitude = place.location.lng;
-                    
+
                     const text = document.createElement('a-link');
                     text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
                     text.setAttribute('title', place.name);
@@ -84,8 +84,14 @@ window.onload = () => {
             timeout: 27000,
         }
     );
+
 };
 
-
-
-
+function myFunction() {
+    var x = document.getElementById("wrapper");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
