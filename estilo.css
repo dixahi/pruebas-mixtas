@@ -1,92 +1,108 @@
-	
-	
+
+
 @media screen and (max-width: 700px) {
- body {
-    padding: 400px 0 0 0;
-    width: 100%
- }
+body {
+  padding: 400px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 }
 
 a {
- color: inherit;
+color: inherit;
 }
 
 
 h1 {
-	text-align: center;
-	font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
-	color: #333;
-	text-shadow: 0 1px 0 #fff;
-	margin: 5px 0;
+text-align: center;
+font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+color: #333;
+text-shadow: 0 1px 0 #fff;
+margin: 5px 0;
 }
 img {
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 1em;
-  background:black;
-  padding:40px 80px;
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+background:black;
+padding:40px 80px;
 }
 
 .description{
-  float:right;
-  margin:10px;
+float:right;
+margin:40px;
 
 }
 
 .busqueda{
-	position:absolute;
-padding:60px;
- top: 0;
- bottom: 0;
- left: 1;
- right:0;
+  display: inline-block;
+  justify-content: center;
+  position:absolute;
+  top: 20px;
+  bottom: 0;
+  left: 1;
+  right:20px;
 }
+
 .boton_busqueda{
-	
- background: #ededed url('lupa.png') no-repeat 9px center; /*icono lupa*/
- padding: 9px;
-    font-weight: 10px;
-    font-size: 15px;
-    color: #ffffff;
-    border-radius: 9px;
-    border: 1px solid #CC3A07;
+  text-decoration: none;
+  padding: 20px;
+  background-image: url(lupa.jpg);
+  background-size: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .botones{
-  display: inline-block;
-  justify-content: center;
-  margin-top:10px;
+display: inline-block;
+justify-content: center;
+margin-top:10px;
 }
 .boton_personalizado{
 
-    text-decoration: none;
-    padding: 9px;
-    font-weight: 10px;
-    font-size: 15px;
-    color: #ffffff;
-    background-color: #1883ba;
-    border-radius: 6px;
-    border: 2px solid #0016b0;
-  }
-  .boton_personalizado:hover{
-    color: #1883ba;
-    background-color: #ffffff;
-  }
-
-#wrapper {
-	position:absolute;
-	width: 400px;
- top: 0;
- bottom: 0;
- left: 0;
- right:0;
-	background: #fff;
-	padding: 20px;
-	border: 10px solid #aaa;
-	border-radius: 15px;
-	background-clip: padding-box;
-	text-align: center;
+  text-decoration: none;
+  padding: 9px;
+  font-weight: 10px;
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #8D0101;
+  border-radius: 6px;
+  border: 2px solid #6D0202;
+}
+.boton_personalizado:hover{
+  color: #1883ba;
+  background-color: #ffffff;
 }
 
+#wrapper {
+position: absolute;
+top: 0;
+bottom: 0;
+left:1;
+right:100px;
+width: 400px;
+background: #fff;
+padding: 20px;
+border: 10px solid #ECECEC;
+border-radius: 15px;
+background-clip: padding-box;
+text-align: center;
+ overflow: auto;
+}
 
+.genero{
+  text-decoration: none;
+  padding: 10px 45px;
+  font-weight: 9px;
+  font-size: 15px;
+  color: #ffffff;
+  background-color: grey;
+  border-radius: 9px;
+}
 
+.division{
+  background: grey;
+  padding: 20px;
+}
