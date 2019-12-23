@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>GeoAR.js demo</title>
-    <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script>
-        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-    </script>
-    <link rel=stylesheet type="text/css" href="estilo.css">
-    <script src="./modelo.js"></script>
-</head>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<!-- three.js library -->
+<script src='vendor/three.js/build/three.js'></script>
+<script src='vendor/three.js/examples/js/controls/VRControls.js'></script>
+<script src='vendor/three.js/examples/js/effects/VREffect.js'></script>
+<script src='vendor/webvr-polyfill.js'></script>
+<script src="vendor/three.js/examples/js/libs/stats.min.js"></script>
+<!-- jsartookit -->
+<script src="../vendor/jsartoolkit5/build/artoolkit.min.js"></script>
+<script src="../vendor/jsartoolkit5/js/artoolkit.api.js"></script>
+<!-- include threex.artoolkit -->
+<script src="../src/threex/threex-artoolkitsource.js"></script>
+<script src="../src/threex/threex-artoolkitcontext.js"></script>
+<script src="../src/threex/threex-artoolkitprofile.js"></script>
+<script src="../src/threex/threex-arbasecontrols.js"></script>
+<script src="../src/threex/threex-armarkercontrols.js"></script>
+<script src="../src/threex/threex-arvideoinwebgl.js"></script>
+<script>THREEx.ArToolkitContext.baseURL = '../'</script>
 
-<body style='margin: 0; overflow: hidden;'>
-    <div class="centered instructions"></div>
-    <a-scene 
-        vr-mode-ui='enabled: false' 
-        embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-    <a-camera gps-camera rotation-reader></a-camera>
-</a-scene>
-<div class="centered">
-    <button data-action="change"></button>
-</div>
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+	<div style='position: absolute; top: 10px; width:100%; text-align: center;z-index:1';>
+	</div>
 </body>
-	
-	
-    
