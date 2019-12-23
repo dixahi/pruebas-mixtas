@@ -42,6 +42,8 @@ padding:60px;
  right:0;
 }
 .boton_busqueda{
+	
+ background: #ededed url('lupa.png') no-repeat 9px center; /*icono lupa*/
  padding: 9px;
     font-weight: 10px;
     font-size: 15px;
